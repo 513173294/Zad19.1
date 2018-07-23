@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep muzyczny</title>
+</head>
+<body>
+<h1>Sklep muzyczny</h1>
+<p>dodaj do koszyka wybrane produkty</p>
+
+
+<ul>
+    <li th:each="product ${productList}"></li>
+
+
+</ul>
+
+
+</body>
+</html>
