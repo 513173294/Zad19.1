@@ -9,11 +9,36 @@
 <p>dodaj do koszyka wybrane produkty</p>
 
 
-<ul>
-    <li th:each="product ${productList}"></li>
+<!--<ul>-->
+<!--<li th:each="product: ${productList}">-->
+<!--<p th:text=“${product.name}“>pro</p>-->
+
+<!--</li>-->
+<!--</ul>-->
 
 
-</ul>
+<table>
+    <thead>
+    <tr>
+        <!--<th>Name</th>-->
+        <!--<th>Price</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="prod: ${productList}">
+        <!--<td ><h3 th:text="pro +${prod.name}"></h3></td>-->
+        <!--<td th:text="${prod.price}"></td>-->
+        <h1 th:text="${prod.name}"></h1>
+        <h3 th:text="${prod.getProducer()}"></h3>
+        <img th:src="${prod.getImgUrl()}"></img>
+        <h4 th:text="${prod.getPrice()}"></h4>
+        <form action="/addToCart" method="post" th:object="${prod}">
+            <input  name="ilosc" type="text"/><br>
+            <input type="submit" value="dodaj"/>
+        </form>
+    </tr>
+    </tbody>
+</table>
 
 
 </body>
