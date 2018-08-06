@@ -32,9 +32,10 @@
         <h3 th:text="${prod.getProducer()}"></h3>
         <img th:src="${prod.getImgUrl()}"></img>
         <h4 th:text="${prod.getPrice()}"></h4>
-        <form action="/addToCart" method="post" th:object="${prod}">
-            <input  name="ilosc" type="text"/><br>
-            <input type="submit" value="dodaj"/>
+        <form action="/addbasket" method="post">
+            <input type="hidden" th:value="${prod.name}" name="name"/>
+            Ilość <input type="number" step="1" min="1" value="1" name="ilosc"/>
+            <input type="submit" value="Dodaj">
         </form>
     </tr>
     </tbody>
